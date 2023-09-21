@@ -5,23 +5,25 @@ def main(page: ft.Page):
     page.title = "Painty Tool"
     page.theme_mode = ft.ThemeMode.DARK
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
-    txt_number = ft.Text(value="0", width=100)
+    def save_img():
+        pass
 
-    def add_number(e):
-        txt_number.value = str(int(txt_number.value) + 1)
-        page.update()
-
-    def subtract_number(e):
-        txt_number.value = str(int(txt_number.value) - 1)
-        page.update()
+    save_btn = ft.ElevatedButton(
+        "Save",
+        on_click=save_img
+    )
 
     page.add(
         ft.Row(
             [
-                ft.IconButton(ft.icons.ADD, on_click=add_number),
-                txt_number,
-                ft.IconButton(ft.icons.REMOVE, on_click=subtract_number),
+                ft.Column(
+                    [
+                        ft.Text("Painty Tool"),
+                        save_btn
+                    ]
+                )
             ],
             alignment=ft.MainAxisAlignment.CENTER
         )
