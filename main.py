@@ -37,7 +37,7 @@ class Paint(tk.Frame):
 
         self.name_entry = tk.Entry(self, width=20)
         self.name_entry.grid(row=27, column=28)
-        self.name_entry.insert(0, "1")
+        self.name_entry.insert(0, "100")
         self.t_status = tk.Label(self, text="draw: " + str(self.t))
         self.t_status.grid(row=0, column=28)
 
@@ -53,7 +53,7 @@ class Paint(tk.Frame):
 
     def save(self, *args):
         name = self.name_entry.get()
-        pth = os.path.join(os.getcwd(), 'imgs', 'test',  name + '.bmp')
+        pth = os.path.join(os.getcwd(), 'imgs', 'test', name + '.bmp')
 
         for x in range(28):
             for y in range(28):
