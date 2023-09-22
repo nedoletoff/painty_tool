@@ -59,7 +59,7 @@ def read_bmp_data(name: str):
         print()
 
 
-def save_img(name: str, width=28, height=28, arr=test_arr):
+def save_img(name: str, arr=test_arr, width=28, height=28):
     with open(name, "wb") as f:
         f.write(b"BM")  # bfType 0
         f.write((258).to_bytes(4, "little"))  # bfSize 2
@@ -78,7 +78,8 @@ def save_img(name: str, width=28, height=28, arr=test_arr):
         f.write((2).to_bytes(4, "little"))  # biClrUsed 46
         f.write((2).to_bytes(4, "little"))  # biClrImportant 50
         f.write(pal_bytes)
-        f.write(arr[::-1])
+        #f.write(arr[::-1])
+        f.write(arr)
 
 
 def main():
