@@ -84,6 +84,7 @@ def save_img(name: str, arr=test_arr, width=28, height=28):
 
 def main():
     save_img("t.bmp")
+    read_bmp_data("imgs/1.bmp")
     print(test_arr)
 
 
